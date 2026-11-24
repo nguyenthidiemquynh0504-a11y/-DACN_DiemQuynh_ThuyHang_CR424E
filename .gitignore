@@ -1,0 +1,16 @@
+.idea/
+.gradle/
+.kotlin/
+.vscode/
+target/
+build/
+local.properties
+.env
+.env.*
+*.iml
+*.jks
+*.keystore
+*.pem
+*.key
+*.apk
+*.aab

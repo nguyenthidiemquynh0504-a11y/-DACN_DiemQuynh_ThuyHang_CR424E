@@ -1,0 +1,12 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="true">
+        <inset android:insetLeft="5dp" android:insetRight="5dp"
+            android:insetTop="7dp" android:insetBottom="8dp">
+            <shape>
+                <solid android:color="@color/mint_selected" />
+                <corners android:radius="17dp" />
+            </shape>
+        </inset>
+    </item>
+    <item android:drawable="@android:color/transparent" />
+</selector>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" tools:context=".ui.main.LogContainerFragment" android:background="@color/surface_canvas">
+    <com.google.android.material.tabs.TabLayout android:id="@+id/tabLayout" android:layout_width="match_parent" android:layout_height="52dp" app:tabIndicatorColor="@color/primary_dark" app:tabSelectedTextColor="@color/featured_text" app:tabTextColor="@color/text_primary" android:layout_marginHorizontal="20dp" android:layout_marginTop="5dp" android:layout_marginBottom="4dp" android:background="@drawable/bg_bmi_segment" app:tabIndicator="@drawable/bg_bmi_tab_indicator" app:tabIndicatorGravity="stretch" app:tabIndicatorFullWidth="true" app:tabRippleColor="@color/outline_soft"
+        app:tabInlineLabel="true"
+        app:tabIconTint="@color/log_tab_icon_tint" />
+    <androidx.viewpager2.widget.ViewPager2 android:id="@+id/viewPager" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" />
+</LinearLayout>

@@ -1,0 +1,25 @@
+<resources>
+    <style name="Base.Theme.BmiApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_dark</item>
+        <item name="colorOnPrimary">@color/on_brand</item>
+        <item name="colorPrimaryContainer">@color/surface_subtle</item>
+        <item name="colorOnPrimaryContainer">@color/text_primary</item>
+        <item name="colorSecondary">@color/accent</item>
+        <item name="colorOnSecondary">@color/on_brand</item>
+        <item name="colorSecondaryContainer">@color/card_calories_bg</item>
+        <item name="colorOnSecondaryContainer">@color/text_primary</item>
+        <item name="colorSurface">@color/surface_panel</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary</item>
+        <item name="colorSurfaceVariant">@color/surface_subtle</item>
+        <item name="colorOutline">@color/outline_field</item>
+        <item name="colorOutlineVariant">@color/outline_soft</item>
+        <item name="android:windowBackground">@color/surface_canvas</item>
+        <item name="android:statusBarColor">@color/surface_canvas</item>
+        <item name="android:navigationBarColor">@color/surface_canvas</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+    </style>
+    <style name="Theme.BmiApp" parent="Base.Theme.BmiApp" />
+</resources>

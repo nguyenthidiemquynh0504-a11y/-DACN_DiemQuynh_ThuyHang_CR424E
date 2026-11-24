@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:id="@+id/swipeRefresh" android:layout_width="match_parent" android:layout_height="match_parent" tools:context=".ui.main.DashboardFragment" android:background="@color/surface_canvas">
+    <androidx.core.widget.NestedScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingStart="17dp" android:paddingEnd="17dp" android:paddingTop="15dp" android:paddingBottom="20dp">
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp" android:fontFamily="sans-serif" android:textStyle="bold" android:text="@string/bmi_body_metrics" android:textColor="@color/text_primary" android:textSize="23sp" />
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:background="@drawable/bg_bmi_featured" android:padding="19dp" android:layout_marginBottom="14dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:baselineAligned="false">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+                            <ImageView android:id="@+id/iconWeight" android:layout_width="20dp" android:layout_height="20dp" android:importantForAccessibility="no" android:src="@drawable/ic_scale_outline" app:tint="@color/featured_muted" />
+                            <TextView android:id="@+id/labelWeight" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="7dp" android:text="@string/dashboard_weight_label" android:textColor="@color/featured_muted" android:textSize="15sp" />
+                        </LinearLayout>
+                        <TextView android:id="@+id/textCurrentWeight" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:fontFamily="sans-serif-medium" android:text="-- kg" android:textColor="@color/featured_text" android:textSize="39sp" android:textStyle="bold" android:letterSpacing="-0.025" />
+                    </LinearLayout>
+                    <View android:layout_width="1dp" android:layout_height="54dp" android:layout_marginStart="6dp" android:layout_marginEnd="14dp" android:background="@color/featured_line" />
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+                            <ImageView android:id="@+id/iconBmi" android:layout_width="20dp" android:layout_height="20dp" android:importantForAccessibility="no" android:src="@drawable/ic_bars_outline" app:tint="@color/featured_muted" />
+                            <TextView android:id="@+id/labelBmi" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="7dp" android:text="@string/dashboard_bmi_label" android:textColor="@color/featured_muted" android:textSize="15sp" />
+                        </LinearLayout>
+                        <TextView android:id="@+id/textBmi" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:fontFamily="sans-serif-medium" android:text="--" android:textColor="@color/featured_text" android:textSize="39sp" android:textStyle="bold" android:letterSpacing="-0.025" />
+                    </LinearLayout>
+                </LinearLayout>
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginTop="13dp" android:background="@color/featured_line" />
+                <TextView android:id="@+id/textBmiStatus" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="9dp" android:fontFamily="sans-serif-medium" android:textColor="@color/featured_text" android:textSize="14sp" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_bmi_segment" android:orientation="vertical" android:paddingStart="17dp" android:paddingEnd="17dp" android:paddingTop="14dp" android:paddingBottom="14dp" android:layout_marginBottom="12dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical">
+                    <ImageView android:id="@+id/iconCalories" android:layout_width="25dp" android:layout_height="25dp" android:importantForAccessibility="no" android:src="@drawable/ic_meal_outline" app:tint="@color/primary" />
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:layout_marginStart="12dp" android:orientation="vertical">
+                        <TextView android:id="@+id/labelCalories" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="@string/bmi_energy_today" android:textColor="@color/text_primary"
+                            android:textSize="19sp" android:textStyle="bold" />
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView android:id="@+id/textCalories" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:textColor="@color/primary" android:textSize="22sp" android:textStyle="bold" />
+                            <TextView android:id="@+id/textCaloriesGoal" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp" android:textColor="@color/text_primary" android:textSize="16sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp" android:gravity="center_vertical" android:orientation="horizontal">
+                    <com.google.android.material.progressindicator.LinearProgressIndicator
+                        android:id="@+id/progressCalories"
+                        android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                        app:trackThickness="12dp" app:trackCornerRadius="6dp" app:trackColor="@color/mint_selected"
+                        app:indicatorColor="@color/primary" />
+                    <TextView android:id="@+id/textCaloriesPercent" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:layout_marginStart="12dp"
+                        android:textSize="14sp" android:textColor="@color/primary" />
+                </LinearLayout>
+                <TextView android:id="@+id/textNoCalorieGoal" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:layout_marginTop="5dp"
+                    android:text="@string/bmi_dashboard_no_calorie_goal"
+                    android:textColor="@color/text_secondary" android:textSize="13sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+            <com.google.android.material.button.MaterialButton android:id="@+id/buttonUpdateMeasurement" style="@style/Widget.Material3.Button.OutlinedButton" android:layout_width="match_parent" android:layout_height="52dp" android:layout_marginBottom="13dp" android:text="@string/measurement_update_button" android:textSize="15sp" app:icon="@drawable/ic_edit_outline" app:iconGravity="textStart" app:cornerRadius="14dp" app:strokeColor="@color/primary" />
+            <LinearLayout android:id="@+id/cardWeightChart" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/bmi_weight_trend" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" android:textStyle="bold" android:layout_marginBottom="12dp" android:textColor="@color/text_primary" android:textSize="20sp" android:fontFamily="sans-serif-medium" />
+                    <com.github.mikephil.charting.charts.LineChart android:id="@+id/chartWeight" android:layout_width="match_parent"
+                        android:layout_height="171dp" android:padding="8dp" android:background="@drawable/bg_bmi_outline" />
+            </LinearLayout>
+            <com.google.android.material.card.MaterialCardView android:id="@+id/cardWeightPrediction" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" app:cardCornerRadius="20dp" app:cardElevation="0dp" app:cardBackgroundColor="@color/surface_panel" app:strokeColor="@color/outline_soft" app:strokeWidth="1dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="12dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/bmi_prediction_title" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" android:textStyle="bold" android:textColor="@color/text_primary" android:textSize="20sp" android:fontFamily="sans-serif-medium" />
+                        <TextView android:id="@+id/textPredictionTrend" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📈 Tăng" android:textAppearance="@style/TextAppearance.Material3.BodySmall" android:textStyle="bold" android:textColor="#E91E63" android:padding="4dp" />
+                    </LinearLayout>
+                    <com.github.mikephil.charting.charts.LineChart android:id="@+id/chartWeightPrediction" android:layout_width="match_parent" android:layout_height="250dp" />
+                    <TextView android:id="@+id/textPredictionInsights" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="" android:textAppearance="@style/TextAppearance.Material3.BodyMedium" android:lineSpacingExtra="4dp" android:layout_marginTop="12dp" android:padding="12dp" android:background="@color/surface_canvas" android:textColor="#424242" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView android:id="@+id/cardCaloriesChart" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" app:cardCornerRadius="20dp" app:cardElevation="0dp" app:cardBackgroundColor="@color/surface_panel" app:strokeColor="@color/outline_soft" app:strokeWidth="1dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/bmi_energy_trend" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" android:textStyle="bold" android:layout_marginBottom="12dp" android:textColor="@color/text_primary" android:textSize="20sp" android:fontFamily="sans-serif-medium" />
+                    <com.github.mikephil.charting.charts.BarChart android:id="@+id/chartCalories" android:layout_width="match_parent" android:layout_height="200dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView android:id="@+id/cardTrendInsight" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" app:cardCornerRadius="20dp" app:cardElevation="0dp" app:cardBackgroundColor="@color/surface_panel" app:strokeColor="@color/outline_soft" app:strokeWidth="1dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/bmi_insight_title" android:textAppearance="@style/TextAppearance.Material3.TitleMedium" android:textStyle="bold" android:layout_marginBottom="8dp" android:textColor="@color/text_primary" android:textSize="20sp" android:fontFamily="sans-serif-medium" />
+                    <TextView android:id="@+id/textInsight" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="" android:textAppearance="@style/TextAppearance.Material3.BodyMedium" android:lineSpacingExtra="4dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <TextView android:id="@+id/textError" android:layout_width="match_parent" android:layout_height="wrap_content" android:textColor="@android:color/holo_red_dark" android:visibility="gone" android:text="Có lỗi xảy ra" android:padding="16dp" android:background="@android:drawable/dialog_holo_light_frame" android:layout_marginTop="8dp" />
+            <ProgressBar android:id="@+id/progressBar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal" android:visibility="gone" android:layout_marginTop="24dp" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

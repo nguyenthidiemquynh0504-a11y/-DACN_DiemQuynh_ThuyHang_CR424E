@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/surface_canvas" tools:context=".ui.profile.ProfileFragment">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp" android:paddingTop="12dp">
+        <!-- Header -->
+        <!-- Streak Card -->
+        <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" app:cardCornerRadius="20dp" app:cardElevation="0dp" app:cardBackgroundColor="@android:color/transparent" app:strokeWidth="0dp" app:strokeColor="@color/outline_soft">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp" android:background="@drawable/bg_bmi_featured">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/streak_title" android:textColor="@color/featured_text" android:textSize="19sp" android:textStyle="bold" android:layout_marginBottom="8dp" />
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:id="@+id/textStreakCurrent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/featured_text" android:textSize="39sp" android:textStyle="bold" tools:text="7 ngày" android:fontFamily="sans-serif-medium" android:letterSpacing="-0.025" />
+                        <TextView android:id="@+id/textStreakLongest" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/featured_muted" android:textSize="12sp" android:alpha="0.8" tools:text="Dài nhất: 30 ngày" />
+                        <TextView android:id="@+id/textStreakMessage" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:textColor="@color/featured_muted" android:textSize="12sp" tools:text="Tuyệt vời! Tiếp tục phát huy!" />
+                    </LinearLayout>
+                    <ImageView android:layout_width="66dp" android:layout_height="66dp"
+                        android:layout_marginStart="12dp" android:src="@drawable/ic_calendar_check"
+                        android:importantForAccessibility="no" app:tint="@color/featured_muted" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+        <!-- Achievements Section -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/achievements_title" android:textSize="21sp" android:textColor="@color/text_primary" android:layout_marginBottom="12dp" android:fontFamily="sans-serif-medium" />
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/recyclerAchievements" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="24dp" tools:listitem="@layout/item_achievement" tools:itemCount="3" />
+        <!-- Divider -->
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/outline_soft" android:layout_marginBottom="16dp" />
+        <!-- Profile Stats Card -->
+        <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" app:cardCornerRadius="20dp" app:cardElevation="0dp" app:cardBackgroundColor="@color/surface_panel" app:strokeWidth="1dp" app:strokeColor="@color/outline_soft">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Thống kê hoạt động" android:textSize="14sp" android:textStyle="bold" android:textColor="@color/text_primary" android:layout_marginBottom="12dp" />
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:weightSum="3">
+                    <!-- Total Food Logs -->
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:gravity="center" android:padding="8dp">
+                        <TextView android:id="@+id/textTotalFoodLogs" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="24sp" android:textStyle="bold" android:textColor="@color/accent" android:text="0" tools:text="150" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Bữa ăn" android:textSize="12sp" android:textColor="@color/text_secondary" android:layout_marginTop="4dp" />
+                    </LinearLayout>
+                    <!-- Total Exercise Logs -->
+                    <View android:layout_width="1dp" android:layout_height="match_parent" android:background="@color/outline_soft" android:layout_marginHorizontal="8dp" />
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:gravity="center" android:padding="8dp">
+                        <TextView android:id="@+id/textTotalExerciseLogs" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="24sp" android:textStyle="bold" android:textColor="@color/primary" android:text="0" tools:text="75" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Bài tập" android:textSize="12sp" android:textColor="@color/text_secondary" android:layout_marginTop="4dp" />
+                    </LinearLayout>
+                    <!-- Days Active -->
+                    <View android:layout_width="1dp" android:layout_height="match_parent" android:background="@color/outline_soft" android:layout_marginHorizontal="8dp" />
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:gravity="center" android:padding="8dp">
+                        <TextView android:id="@+id/textDaysActive" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="24sp" android:textStyle="bold" android:textColor="?attr/colorSecondary" android:text="0" tools:text="30" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Ngày hoạt động" android:textSize="12sp" android:textColor="@color/text_secondary" android:layout_marginTop="4dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+        <!-- Progress to Goal Card -->
+        <com.google.android.material.card.MaterialCardView android:id="@+id/cardProgressToGoal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" app:cardCornerRadius="20dp" app:cardElevation="0dp" app:cardBackgroundColor="@color/surface_panel" app:strokeWidth="1dp" app:strokeColor="@color/outline_soft">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/progress_to_goal" android:textSize="14sp" android:textStyle="bold" android:textColor="@color/text_primary" android:layout_marginBottom="8dp" />
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="8dp">
+                    <TextView android:id="@+id/textCurrentWeight" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textColor="@color/text_secondary" android:textSize="12sp" tools:text="Hiện tại: 70 kg" />
+                    <TextView android:id="@+id/textTargetWeightDisplay" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/text_secondary" android:textSize="12sp" tools:text="Mục tiêu: 65 kg" />
+                </LinearLayout>
+                <ProgressBar android:id="@+id/progressBarWeight" style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="8dp" android:progressTint="@color/primary" android:max="100" tools:progress="60" />
+                <TextView android:id="@+id/textProgressPercentage" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:textColor="@color/accent" android:textSize="12sp" android:textStyle="bold" tools:text="60% hoàn thành" />
+                <TextView android:id="@+id/textDaysUntilGoal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:textColor="@color/text_secondary" android:textSize="11sp" android:textStyle="italic" tools:text="Dự kiến đạt mục tiêu trong 45 ngày" />
+                <com.google.android.material.button.MaterialButton android:id="@+id/buttonShareProgress" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:layout_gravity="end" android:text="Chia sẻ tiến độ" android:textSize="12sp" style="@style/Widget.Material3.Button.TextButton" app:icon="@android:drawable/ic_menu_share" app:iconGravity="textStart" android:minHeight="48dp" app:cornerRadius="14dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+        <!-- Goals Section Header -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Mục tiêu của bạn" android:textSize="21sp" android:textColor="@color/text_primary" android:layout_marginBottom="16dp" android:fontFamily="sans-serif-medium" />
+        <!-- Target weight -->
+        <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Cân nặng mục tiêu (kg)" app:startIconDrawable="@android:drawable/ic_menu_myplaces" app:boxStrokeColor="@color/primary" android:layout_marginBottom="16dp" style="@style/Widget.Bmi.Field">
+            <com.google.android.material.textfield.TextInputEditText android:id="@+id/editTextTargetWeight" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <!-- Daily calorie goal -->
+        <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Mục tiêu calories mỗi ngày" app:startIconDrawable="@android:drawable/ic_menu_compass" app:boxStrokeColor="@color/primary" android:layout_marginBottom="16dp" style="@style/Widget.Bmi.Field">
+            <com.google.android.material.textfield.TextInputEditText android:id="@+id/editTextDailyCalorieGoal" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <!-- Gender selection -->
+        <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Giới tính" app:startIconDrawable="@android:drawable/ic_menu_myplaces" app:boxStrokeColor="@color/primary" android:layout_marginBottom="24dp" style="@style/Widget.Bmi.Field">
+            <Spinner android:id="@+id/spinnerGender" android:layout_width="match_parent" android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <!-- Save button -->
+        <com.google.android.material.button.MaterialButton android:id="@+id/buttonSaveProfile" android:layout_width="match_parent" android:layout_height="56dp" android:text="Lưu thay đổi" android:textAllCaps="false" android:textSize="16sp" app:cornerRadius="14dp" app:icon="@android:drawable/ic_menu_save" app:iconGravity="textStart" android:layout_marginBottom="16dp" android:minHeight="48dp" />
+        <!-- Progress indicator -->
+        <ProgressBar android:id="@+id/progressBar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal" android:visibility="gone" android:layout_marginBottom="24dp" />
+        <!-- Divider -->
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/outline_soft" android:layout_marginTop="8dp" android:layout_marginBottom="24dp" />
+        <!-- Logout button -->
+        <com.google.android.material.button.MaterialButton android:id="@+id/buttonLogout" android:layout_width="match_parent" android:layout_height="56dp" android:text="Đăng xuất" android:textAllCaps="false" android:textSize="16sp" app:cornerRadius="12dp" app:backgroundTint="@android:color/holo_red_dark" app:icon="@android:drawable/ic_menu_close_clear_cancel" app:iconGravity="textStart" />
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BmiApp</string>
+    <!-- Dashboard -->
+    <string name="dashboard_title">Tổng quan hôm nay</string>
+    <string name="dashboard_weight_label">Cân nặng hiện tại</string>
+    <string name="dashboard_weight_format">%1$.1f kg</string>
+    <string name="dashboard_bmi_label">Chỉ số BMI</string>
+    <string name="dashboard_bmi_format">%1$.1f</string>
+    <string name="dashboard_calories_label">Calories hôm nay</string>
+    <string name="dashboard_calories_format">%1$d kcal</string>
+    <string name="dashboard_weight_placeholder">-- kg</string>
+    <string name="dashboard_bmi_placeholder">--</string>
+    <string name="measurement_update_button">Cập nhật chỉ số hiện tại</string>
+    <string name="measurement_dialog_title">Nhập cân nặng/chiều cao</string>
+    <string name="measurement_weight_hint">Cân nặng (kg)</string>
+    <string name="measurement_height_hint">Chiều cao (cm)</string>
+    <string name="measurement_save_button">Lưu</string>
+    <string name="measurement_weight_error">Cân nặng phải lớn hơn 0</string>
+    <string name="measurement_update_success">Đã lưu chỉ số thành công</string>
+    <string name="dashboard_error_generic">Có lỗi xảy ra, vui lòng thử lại.</string>
+    <!-- Login strings -->
+    <string name="login_welcome">Đăng nhập</string>
+    <string name="login_subtitle">Theo dõi cân nặng, bữa ăn và vận động mỗi ngày.</string>
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Mật khẩu</string>
+    <string name="login_button">Đăng nhập</string>
+    <string name="login_register_link">Chưa có tài khoản? <b><u>Đăng ký</u></b></string>
+    <string name="login_email_placeholder">Nhập email của bạn</string>
+    <string name="login_password_placeholder">Nhập mật khẩu</string>
+    <string name="bmi_energy_amount">%1$,d</string>
+    <string name="bmi_energy_goal_inline">/ %1$,d kcal</string>
+    <string name="bmi_log_energy_empty">Năng lượng: — kcal</string>
+    <string name="bmi_energy_percent">%1$d%%</string>
+    <!-- Register strings -->
+    <string name="register_welcome">Đăng ký</string>
+    <string name="register_subtitle">Tạo tài khoản để bắt đầu nhật ký sức khỏe của bạn.</string>
+    <string name="register_full_name_hint">Họ và tên</string>
+    <string name="register_email_hint">Email</string>
+    <string name="register_password_hint">Mật khẩu</string>
+    <string name="register_button">Đăng ký</string>
+    <string name="register_login_link">Đã có tài khoản? Đăng nhập</string>
+    <!-- Logout strings -->
+    <string name="logout_dialog_title">Đăng xuất</string>
+    <string name="logout_dialog_message">Bạn có chắc chắn muốn đăng xuất?</string>
+    <string name="logout_button_confirm">Đăng xuất</string>
+    <string name="logout_button_cancel">Hủy</string>
+    <string name="logout_success">Đã đăng xuất</string>
+    <!-- Chat strings -->
+    <string name="chat_input_hint">Nhập tin nhắn...</string>
+    <string name="chat_offline_notice">Không có kết nối mạng. Vui lòng kiểm tra lại.</string>
+    <string name="chat_retry">Thử lại</string>
+    <string name="chat_loading">Đang gửi...</string>
+    <string name="chat_title">BMI Assistant</string>
+    <string name="chat_history_cd">Danh sách hội thoại</string>
+    <string name="chat_send_cd">Gửi tin nhắn</string>
+    <!-- Empty States -->
+    <string name="empty_state">Trống</string>
+    <string name="no_data">Chưa có dữ liệu</string>
+    <string name="empty_state_message">Hãy bắt đầu thêm dữ liệu</string>
+    <string name="get_started">Bắt đầu</string>
+    <string name="empty_dashboard">Chưa có thống kê</string>
+    <string name="empty_dashboard_message">Bắt đầu log bữa ăn để xem thống kê</string>
+    <string name="empty_food_log">Chưa có bữa ăn nào hôm nay</string>
+    <string name="empty_food_log_message">Hãy thêm bữa ăn đầu tiên của bạn</string>
+    <string name="empty_exercise_log">Chưa có bài tập nào</string>
+    <string name="empty_exercise_log_message">Hãy thêm bài tập đầu tiên</string>
+    <string name="empty_chat_history">Chưa có cuộc trò chuyện</string>
+    <string name="empty_chat_history_message">Bắt đầu trò chuyện với chatbot</string>
+    <!-- Error States -->
+    <string name="error">Lỗi</string>
+    <string name="error_occurred">Đã xảy ra lỗi</string>
+    <string name="error_message">Vui lòng thử lại sau</string>
+    <string name="retry">Thử lại</string>
+    <string name="error_network">Không có kết nối mạng</string>
+    <string name="error_timeout">Kết nối timeout</string>
+    <string name="error_server">Lỗi máy chủ</string>
+    <string name="error_unknown">Lỗi không xác định</string>
+    <!-- Loading States -->
+    <string name="loading">Đang tải...</string>
+    <string name="loading_data">Đang tải dữ liệu...</string>
+    <string name="loading_foods">Đang tải danh sách món ăn...</string>
+    <string name="loading_exercises">Đang tải danh sách bài tập...</string>
+    <!-- Offline Banner -->
+    <string name="offline_banner">Không có kết nối mạng</string>
+    <string name="online_banner">Đã kết nối lại</string>
+    <!-- Profile & Achievements -->
+    <string name="profile_title">Hồ sơ</string>
+    <string name="streak_title">Chuỗi ngày</string>
+    <string name="streak_current">%1$d ngày</string>
+    <string name="streak_longest">Chuỗi dài nhất: %1$d ngày</string>
+    <string name="achievements_title">Thành tựu</string>
+    <string name="achievement_icon">Biểu tượng thành tựu</string>
+    <string name="locked">Đã khóa</string>
+    <string name="progress_to_goal">Tiến độ đến mục tiêu</string>
+    <string name="progress_format">%1$.1f kg / %2$.1f kg</string>
+    <!-- Exit Confirmation -->
+    <string name="exit_dialog_title">Thoát ứng dụng</string>
+    <string name="exit_message_1">Bạn muốn tạm biệt rồi sao? 🥺</string>
+    <string name="exit_message_2">Hành trình sức khỏe của bạn chưa kết thúc mà! 💪</string>
+    <string name="exit_message_3">Đừng bỏ cuộc nhé, mục tiêu đang chờ bạn đấy! 🎯</string>
+    <string name="exit_message_4">Streak của bạn đang rất tốt đó! Quay lại nhé? 🔥</string>
+    <string name="exit_message_5">Còn nhiều điều thú vị đang chờ bạn khám phá! ✨</string>
+    <string name="exit_button_stay">Ở lại</string>
+    <string name="exit_button_exit">Thoát</string>
+    <string name="double_tap_exit">Nhấn Back một lần nữa để thoát</string>
+    <string name="bmi_brand">BMI ChatBot</string>
+    <string name="bmi_tab_dashboard">Tổng quan</string>
+    <string name="bmi_tab_logs">Nhật ký</string>
+    <string name="bmi_tab_chat">Chat</string>
+    <string name="bmi_tab_profile">Hồ sơ</string>
+    <string name="bmi_chat_title">Chatbot</string>
+    <string name="bmi_body_metrics">Chỉ số cơ thể</string>
+    <string name="bmi_energy_today">Năng lượng hôm nay</string>
+    <string name="bmi_weight_trend">Xu hướng cân nặng</string>
+    <string name="bmi_energy_trend">Năng lượng trong tuần</string>
+    <string name="bmi_prediction_title">Dự đoán cân nặng trong 7 ngày</string>
+    <string name="bmi_insight_title">Xu hướng của bạn</string>
+    <string name="bmi_chat_new">Cuộc trò chuyện mới</string>
+    <string name="bmi_chat_recent">Cuộc trò chuyện gần đây</string>
+    <string name="bmi_chat_prompt">Nhập tin nhắn…</string>
+    <string name="bmi_chat_typing">Đang trả lời…</string>
+    <string name="bmi_history">Lịch sử</string>
+    <string name="bmi_empty_history">Chưa có dữ liệu trong ngày này</string>
+    <string name="bmi_log_meal">Ghi bữa ăn</string>
+    <string name="bmi_log_activity">Ghi bài tập</string>
+    <string name="bmi_favorites">Yêu thích</string>
+    <string name="bmi_log_food_tab">Món ăn</string>
+    <string name="bmi_log_exercise_tab">Bài tập</string>
+    <string name="recommendation_food_energy">%1$d kcal / %2$s</string>
+    <string name="recommendation_exercise_energy">%1$d kcal / giờ</string>
+    <string name="recommendation_food_empty">Chưa có món ăn để gợi ý.</string>
+    <string name="recommendation_exercise_empty">Chưa có bài tập để gợi ý.</string>
+    <string name="bmi_latest_measurement">Từ số đo gần nhất</string>
+    <string name="bmi_no_measurement">Chưa có số đo</string>
+    <string name="bmi_dashboard_no_calorie_goal">Bạn có thể đặt mục tiêu trong Hồ sơ.</string>
+</resources>

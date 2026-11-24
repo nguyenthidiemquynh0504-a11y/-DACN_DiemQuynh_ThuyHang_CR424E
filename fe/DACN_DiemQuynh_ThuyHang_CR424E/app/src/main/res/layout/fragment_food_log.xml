@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/surface_canvas" android:fillViewport="true" tools:context=".ui.main.log.FoodLogFragment">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp" android:paddingTop="7dp">
+        <!-- Header Section -->
+        <!-- Favorites RecyclerView (hidden by default) -->
+        <com.google.android.material.card.MaterialCardView android:id="@+id/cardForm" android:layout_width="match_parent" android:layout_height="wrap_content" app:cardCornerRadius="20dp" app:cardElevation="0dp" app:cardBackgroundColor="@color/surface_panel" app:strokeWidth="1dp" app:strokeColor="@color/outline_soft" android:layout_marginBottom="13dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginBottom="6dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/bmi_log_meal" android:textColor="@color/text_primary" android:textSize="22sp" android:textStyle="bold" />
+                        </LinearLayout>
+                        <!-- Action buttons -->
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                            <!-- History button -->
+                            <com.google.android.material.button.MaterialButton android:id="@+id/buttonHistory" android:layout_width="48dp" android:layout_height="48dp" style="@style/Widget.Material3.Button.TextButton" android:textSize="20sp" android:minWidth="0dp" android:paddingStart="11dp" android:paddingEnd="11dp" android:contentDescription="Xem lịch sử" app:icon="@drawable/ic_clock_outline" app:iconTint="?attr/colorPrimary" app:iconGravity="textStart" android:layout_marginEnd="2dp" app:iconSize="23dp" app:iconPadding="0dp" />
+                            <!-- Toggle Favorites Button -->
+                            <com.google.android.material.chip.Chip android:id="@+id/buttonToggleFavorites" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/bmi_favorites" android:textSize="13sp" style="@style/Widget.Material3.Chip.Filter" app:chipBackgroundColor="@color/surface_subtle" app:chipStrokeColor="@color/outline_soft" app:chipStrokeWidth="1dp" app:chipCornerRadius="12dp" android:textColor="@color/primary" app:chipIcon="@drawable/ic_star_outline" app:chipIconVisible="true" app:chipIconTint="@color/primary" android:checkable="false" android:minHeight="48dp" app:ensureMinTouchTargetSize="true" app:chipMinHeight="36dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+                <!-- Food selection with search - Filled style -->
+                <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content" app:startIconDrawable="@drawable/ic_search" app:startIconTint="@color/gradient_start_food" app:endIconMode="clear_text" app:boxBackgroundMode="outline" app:boxBackgroundColor="@color/surface_panel" app:boxCornerRadiusTopStart="16dp" app:boxCornerRadiusTopEnd="16dp" app:boxCornerRadiusBottomStart="16dp" app:boxCornerRadiusBottomEnd="16dp" app:boxStrokeWidth="1dp" app:boxStrokeColor="@color/field_border" app:boxStrokeWidthFocused="2dp" app:hintEnabled="false" android:layout_marginBottom="16dp" style="@style/Widget.Bmi.Field">
+                    <com.google.android.material.textfield.MaterialAutoCompleteTextView android:id="@+id/autoCompleteFood" android:hint="Tìm kiếm món ăn" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="text" android:completionThreshold="1" android:textColor="@color/text_primary" android:textSize="16sp" android:paddingStart="16dp" android:paddingEnd="16dp" android:paddingTop="16dp" android:paddingBottom="16dp" android:minHeight="52dp"  android:textColorHint="@color/text_secondary" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <!-- Quantity input - Filled style -->
+                <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content" app:suffixText="gram" app:suffixTextColor="@color/gradient_start_food" app:boxBackgroundMode="outline" app:boxBackgroundColor="@color/surface_panel" app:boxCornerRadiusTopStart="16dp" app:boxCornerRadiusTopEnd="16dp" app:boxCornerRadiusBottomStart="16dp" app:boxCornerRadiusBottomEnd="16dp" app:boxStrokeWidth="1dp" app:boxStrokeColor="@color/field_border" app:boxStrokeWidthFocused="2dp" app:hintEnabled="false" android:layout_marginBottom="8dp" style="@style/Widget.Bmi.Field">
+                    <com.google.android.material.textfield.TextInputEditText android:id="@+id/editTextQuantity" android:hint="Số lượng" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="numberDecimal" android:textColor="@color/text_primary" android:textSize="16sp" android:paddingStart="16dp" android:paddingEnd="16dp" android:paddingTop="16dp" android:paddingBottom="16dp" android:minHeight="52dp"  android:textColorHint="@color/text_secondary" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <!-- Calories Display (Realtime) -->
+                <LinearLayout android:id="@+id/layoutCaloriesInfo" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:paddingStart="16dp" android:paddingEnd="16dp" android:paddingTop="8dp" android:paddingBottom="8dp" android:background="@drawable/bg_bmi_mint" android:minHeight="48dp" android:layout_marginBottom="8dp">
+                    <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_energy_outline" app:tint="@color/gradient_start_food" android:layout_marginEnd="8dp" android:importantForAccessibility="no" />
+                    <TextView android:id="@+id/textCaloriesInfo" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/bmi_log_energy_empty" android:textAppearance="@style/TextAppearance.Material3.BodyMedium" android:textStyle="bold" android:textColor="@color/text_primary" android:fontFamily="sans-serif-medium" />
+                </LinearLayout>
+                <RadioGroup android:id="@+id/chipGroupMealType"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp" android:checkedButton="@id/chipBreakfast"
+                    android:orientation="horizontal">
+                    <RadioButton android:id="@+id/chipBreakfast" style="@style/Widget.Bmi.MealOption"
+                        android:layout_width="0dp" android:layout_height="48dp"
+                        android:layout_weight="1" android:text="Sáng" />
+                    <RadioButton android:id="@+id/chipLunch" style="@style/Widget.Bmi.MealOption"
+                        android:layout_width="0dp" android:layout_height="48dp"
+                        android:layout_weight="1" android:layout_marginStart="8dp" android:text="Trưa" />
+                    <RadioButton android:id="@+id/chipDinner" style="@style/Widget.Bmi.MealOption"
+                        android:layout_width="0dp" android:layout_height="48dp"
+                        android:layout_weight="1" android:layout_marginStart="8dp" android:text="Tối" />
+                    <RadioButton android:id="@+id/chipSnack" style="@style/Widget.Bmi.MealOption"
+                        android:layout_width="0dp" android:layout_height="48dp"
+                        android:layout_weight="1" android:layout_marginStart="8dp" android:text="Xế" />
+                </RadioGroup>
+                <com.google.android.material.button.MaterialButton android:id="@+id/buttonLogFood" android:layout_width="match_parent" android:layout_height="56dp" android:text="Ghi lại bữa ăn" android:textAllCaps="false" android:textSize="17sp" android:stateListAnimator="@null" style="@style/Widget.Bmi.PrimaryButton" android:layout_marginTop="8dp" android:elevation="0dp" app:cornerRadius="14dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView android:id="@+id/cardFavorites" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="20dp" app:cardCornerRadius="20dp" app:cardElevation="0dp" app:cardBackgroundColor="@color/surface_panel" android:visibility="gone" app:strokeWidth="1dp" app:strokeColor="@color/outline_soft">
+            <androidx.recyclerview.widget.RecyclerView android:id="@+id/recyclerFavorites" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingStart="16dp" android:paddingEnd="16dp" android:paddingTop="8dp" android:paddingBottom="8dp" android:nestedScrollingEnabled="false" />
+        </com.google.android.material.card.MaterialCardView>
+        <!-- AI Recommendations Section - Moved to TOP -->
+        <com.google.android.material.card.MaterialCardView android:id="@+id/cardRecommendations" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="20dp" app:cardCornerRadius="20dp" app:cardElevation="0dp" app:cardBackgroundColor="@color/surface_panel" app:strokeWidth="1dp" android:visibility="gone" app:strokeColor="@color/outline_soft">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="8dp">
+                    <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_sparkle" android:layout_marginEnd="8dp" android:contentDescription="Sparkle icon" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Gợi ý món ăn" android:textSize="22sp" android:textStyle="bold" android:textColor="@color/text_primary" />
+                </LinearLayout>
+                <TextView android:id="@+id/textRecommendationExplanation" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Đang tải gợi ý..." android:textAppearance="@style/TextAppearance.Material3.BodySmall" android:textColor="@color/text_secondary" android:layout_marginBottom="12dp" />
+                <androidx.recyclerview.widget.RecyclerView android:id="@+id/recyclerRecommendations" android:layout_width="match_parent" android:layout_height="wrap_content" android:nestedScrollingEnabled="false" />
+                <com.google.android.material.button.MaterialButton android:id="@+id/buttonShowMoreRecommendations" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="Xem thêm" style="@style/Widget.Material3.Button.TextButton" android:textColor="?attr/colorPrimary" android:visibility="gone" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+        <!-- Form Card -->
+        <!-- Submit button - Gradient style -->
+        <!-- Progress indicator -->
+        <ProgressBar android:id="@+id/progressBar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal" android:visibility="gone" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
